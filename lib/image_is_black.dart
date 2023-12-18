@@ -53,7 +53,13 @@ class _ImageIsBlackWidgetState extends State<ImageIsBlackWidget> {
   }
 
   Future<double> _getAvgLuminance(ImageProvider image) async {
-    final List<Color> colors = (await PaletteGenerator.fromImageProvider(image)).colors.toList(growable: false);
+    final List<Color> colors = (await PaletteGenerator.fromImageProvider(
+      image,
+      // size: const Size(256.0, 170.0),
+      // maximumColorCount: 20,
+    ))
+        .colors
+        .toList(growable: false);
     double totalLuminance = 0;
     colors.forEach((color) => totalLuminance += color.computeLuminance());
     return totalLuminance / colors.length;

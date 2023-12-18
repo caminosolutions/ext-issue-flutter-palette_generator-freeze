@@ -39,13 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
         ? FilledButton(onPressed: () => setState(() => _load = true), child: const Text('calculate'))
         : ImageIsBlackWidget(
             /// image size = 263KB
-            imageProvider: const AssetImage('vanessa-bucceri-X1gTLgWMDKg-unsplash_hd.jpg'),
+            // imageProvider: const AssetImage('assets/vanessa-bucceri-X1gTLgWMDKg-unsplash_hd.jpg'),
 
             /// image sizes > 2MB
-            // imageProvider: const AssetImage('assets/pexels-christian-heitz-842711.jpg'),
+            imageProvider: const AssetImage('assets/pexels-christian-heitz-842711.jpg'),
             // imageProvider: Image.asset('assets/pexels-christian-heitz-842711.jpg').image,
             // imageProvider: AssetImage('assets/pexels-mohamed-almari-1485894.jpg'),
             // imageProvider: AssetImage('assets/pexels-vlad-alexandru-popa-1402787.jpg'),
+
             builder: (isBlack) => Text(
               'IsBlack: $isBlack',
             ),
